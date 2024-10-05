@@ -54,7 +54,7 @@ jobs:
     needs: dockerBuildPush
     environment:
       name: prod
-      url: https://d3sfjie2jfd4f3founder-dash.azurewebsites.net/
+      url: https://56e4ipkm3y57g-api.azurewebsites.net/
     
     steps:
     - uses: actions/checkout@v4
@@ -66,5 +66,5 @@ jobs:
 
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 'd3sfjie2jfd4f3founder-dash'
+        app-name: '56e4ipkm3y57g-api'
         images: 56e4ipkm3y57gcosureg.azurecr.io/techexcel/csdash:${{github.run_number}}
