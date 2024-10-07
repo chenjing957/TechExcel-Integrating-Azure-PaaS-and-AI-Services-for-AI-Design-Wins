@@ -9,8 +9,7 @@ public class DatabaseService : IDatabaseService
     public async Task<IEnumerable<Hotel>> GetHotels()
     {
         var sql = "SELECT HotelID, HotelName, City, Country FROM dbo.Hotel";
-        var connstring = Environment.GetEnvironmentVariable("SQLCONNSTR_ContosoSuites");
-        Console.WriteLine(connstring);
+
         using var conn = new SqlConnection(
             connectionString: Environment.GetEnvironmentVariable("SQLCONNSTR_ContosoSuites")!
         );
