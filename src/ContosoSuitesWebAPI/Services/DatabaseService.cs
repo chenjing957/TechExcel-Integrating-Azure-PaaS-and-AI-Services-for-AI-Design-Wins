@@ -10,7 +10,7 @@ public class DatabaseService : IDatabaseService
     {
         var sql = "SELECT HotelID, HotelName, City, Country FROM dbo.Hotel";
         var connstring = Environment.GetEnvironmentVariable("SQLCONNSTR_ContosoSuites");
-        logger.LogInformation(connstring);
+        Console.WriteLine(connstring);
         using var conn = new SqlConnection(
             connectionString: Environment.GetEnvironmentVariable("SQLCONNSTR_ContosoSuites")!
         );
