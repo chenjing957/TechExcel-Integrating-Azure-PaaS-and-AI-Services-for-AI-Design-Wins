@@ -38,7 +38,7 @@ public class DatabaseService : IDatabaseService
 
     [KernelFunction]
     [Description("Get all bookings for a single hotel.")]
-    public async Task<IEnumerable<Booking>> GetBookingsForHotel(int hotelId)
+    public async Task<IEnumerable<Booking>> GetBookingsForHotel([Description("The ID of the hotel")] int hotelId)
     {
         var sql = "SELECT BookingID, CustomerID, HotelID, StayBeginDate, StayEndDate, NumberOfGuests FROM dbo.Booking WHERE HotelID = @HotelID";
         using var conn = new SqlConnection(
@@ -68,7 +68,7 @@ public class DatabaseService : IDatabaseService
 
     [KernelFunction]
     [Description("Get Bookings By Hotel And Minimum Date.")]
-    public async Task<IEnumerable<Booking>> GetBookingsByHotelAndMinimumDate(int hotelId, DateTime dt)
+    public async Task<IEnumerable<Booking>> GetBookingsByHotelAndMinimumDate([Description("The ID of the hotel")] int hotelId, [Description("The minimum of DateTime")] DateTime dt)
     {
         var sql = "SELECT BookingID, CustomerID, HotelID, StayBeginDate, StayEndDate, NumberOfGuests FROM dbo.Booking WHERE HotelID = @HotelID AND StayBeginDate >= @StayBeginDate";
         using var conn = new SqlConnection(
