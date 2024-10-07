@@ -8,8 +8,8 @@ namespace ContosoSuitesWebAPI.Services;
 
 public class DatabaseService : IDatabaseService
 {
-    [KernelFunction]
-    [Description("Get all hotels.")]
+    //[KernelFunction]
+    //[Description("Get all hotels.")]
     public async Task<IEnumerable<Hotel>> GetHotels()
     {
         var sql = "SELECT HotelID, HotelName, City, Country FROM dbo.Hotel";
@@ -36,9 +36,9 @@ public class DatabaseService : IDatabaseService
         return hotels;
     }
 
-    [KernelFunction]
-    [Description("Get all bookings for a single hotel.")]
-    public async Task<IEnumerable<Booking>> GetBookingsForHotel([Description("The ID of the hotel")] int hotelId)
+    //[KernelFunction]
+    //[Description("Get all bookings for a single hotel.")]
+    public async Task<IEnumerable<Booking>> GetBookingsForHotel(int hotelId)
     {
         var sql = "SELECT BookingID, CustomerID, HotelID, StayBeginDate, StayEndDate, NumberOfGuests FROM dbo.Booking WHERE HotelID = @HotelID";
         using var conn = new SqlConnection(
@@ -66,8 +66,8 @@ public class DatabaseService : IDatabaseService
         return bookings;
     }
 
-    [KernelFunction]
-    [Description("Get Bookings By Hotel And Minimum Date.")]
+    //[KernelFunction]
+    //[Description("Get Bookings By Hotel And Minimum Date.")]
     public async Task<IEnumerable<Booking>> GetBookingsByHotelAndMinimumDate(int hotelId, DateTime dt)
     {
         var sql = "SELECT BookingID, CustomerID, HotelID, StayBeginDate, StayEndDate, NumberOfGuests FROM dbo.Booking WHERE HotelID = @HotelID AND StayBeginDate >= @StayBeginDate";
@@ -97,8 +97,8 @@ public class DatabaseService : IDatabaseService
         return bookings;
     }
 
-    [KernelFunction]
-    [Description("Get Bookings Missing Hotel Rooms.")]
+    //[KernelFunction]
+    //[Description("Get Bookings Missing Hotel Rooms.")]
     public async Task<IEnumerable<Booking>> GetBookingsMissingHotelRooms()
     {
         var sql = """
@@ -142,8 +142,8 @@ public class DatabaseService : IDatabaseService
         return bookings;
     }
     
-    [KernelFunction]
-    [Description("Get Bookings With Multiple Hotel Rooms.")]
+    //[KernelFunction]
+    //[Description("Get Bookings With Multiple Hotel Rooms.")]
     public async Task<IEnumerable<Booking>> GetBookingsWithMultipleHotelRooms()
     {
         var sql = """
