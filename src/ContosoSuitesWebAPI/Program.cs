@@ -59,14 +59,14 @@ builder.Services.AddSingleton<Kernel>((_) =>
 });
 
 
-builder.Services.AddSingleton<AzureOpenAIClient>((_) =>
-{
-    var endpoint = new Uri(builder.Configuration["AzureOpenAI:Endpoint"]!);
-    var credentials = new AzureKeyCredential(builder.Configuration["AzureOpenAI:ApiKey"]!);
+//builder.Services.AddSingleton<AzureOpenAIClient>((_) =>
+//{
+//    var endpoint = new Uri(builder.Configuration["AzureOpenAI:Endpoint"]!);
+//    var credentials = new AzureKeyCredential(builder.Configuration["AzureOpenAI:ApiKey"]!);
 
-    var client = new AzureOpenAIClient(endpoint, credentials);
-    return client;
-});
+//    var client = new AzureOpenAIClient(endpoint, credentials);
+//    return client;
+//});
 
 
 
