@@ -12,7 +12,7 @@ namespace ContosoSuitesWebAPI.Services
         //private readonly AzureOpenAIClient _client = openAIClient;
         private readonly Kernel _kernel = kernel;
         private readonly CosmosClient _cosmosClient = cosmosClient;
-        private readonly string _embeddingDeploymentName = configuration.GetValue<string>("AzureOpenAI:EmbeddingDeploymentName") ?? "text-embedding-ada-002";
+        //private readonly string _embeddingDeploymentName = configuration.GetValue<string>("AzureOpenAI:EmbeddingDeploymentName") ?? "text-embedding-ada-002";
 
         public async Task<float[]> GetEmbeddings(string text)
         {
