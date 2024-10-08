@@ -57,7 +57,7 @@ def main():
 
                 # Exercise 3 Task 3 TODO #6: Display the results as a table.
                 st.write(query_vector)
-                #st.table(vector_search_results.json())
+                st.table(vector_search_results.json())
             else:
                 st.warning("Please enter a query.")
 
