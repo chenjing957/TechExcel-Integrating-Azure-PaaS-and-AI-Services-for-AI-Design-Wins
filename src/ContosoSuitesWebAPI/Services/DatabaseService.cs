@@ -8,7 +8,7 @@ namespace ContosoSuitesWebAPI.Services;
 
 public class DatabaseService : IDatabaseService
 {
-    [KernelFunction("get_hotels")]
+    [KernelFunction]
     [Description("Get all hotels.")]
     public async Task<IEnumerable<Hotel>> GetHotels()
     {
