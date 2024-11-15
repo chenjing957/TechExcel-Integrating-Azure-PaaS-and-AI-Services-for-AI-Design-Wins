@@ -42,7 +42,7 @@ public class DatabaseService : IDatabaseService
     {
         var sql = "SELECT BookingID, CustomerID, HotelID, StayBeginDate, StayEndDate, NumberOfGuests FROM dbo.Booking WHERE HotelID = @HotelID";
         using var conn = new SqlConnection(
-            connectionString: Environment.GetEnvironmentVariable("SQLCONNSTR_ContosoSuites")!
+            connectionString: Environment.GetEnvironmentVariable("SQLAZURECONNSTR_ContosoSuites")!
         );
         conn.Open();
         using var cmd = new SqlCommand(sql, conn);
