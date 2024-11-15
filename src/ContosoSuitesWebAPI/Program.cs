@@ -69,7 +69,6 @@ builder.Services.AddSingleton<Kernel>((_) =>
         return client;
     });
     */
-    
     return kernelBuilder.Build();
 });
 
